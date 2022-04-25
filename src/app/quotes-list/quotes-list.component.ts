@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { QuotesService } from '../services/quotes.service';
 
 @Component({
   selector: 'quotes-list',
@@ -8,42 +8,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuotesListComponent implements OnInit {
   data: any[] = []
-  details: any = []
   page: number = 1
-  id: number = 0
 
   constructor(
-    private http: HttpClient
+    private quotesService: QuotesService
   ) { }
   
-    nextPage() {
-      this.page ++
-      this.ngOnInit()
-      console.log(this.page)
-    }
-  
-    prevPage() {
-      this.page --
-      this.ngOnInit()
-      console.log(this.page)
-    }
+  nextPage() {
+    this.page ++
+    this.ngOnInit()
+    console.log(this.page)
+  }
+
+  prevPage() {
+    this.page --
+    this.ngOnInit()
+    console.log(this.page)
+  }
 
   ngOnInit(): void {
-    this.http.get(`https://jsonplaceholder.typicode.com/posts/?_page=${this.page}&_limit=20`)
+    this.quotesService.getQuotes(this.page)
     .subscribe((data: any) => {
+      console.log(this.data)
       this.data = data
     })
   }
-
-  getDetails(id: number) {
-    this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    .subscribe((details: any) => {
-      this.details = details
-    })
-  }
-
-  eraseDetails() {
-    this.details = 0
-  }
-
 }

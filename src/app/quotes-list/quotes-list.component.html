@@ -1,19 +1,11 @@
 <h1>Quotes quotesList</h1>
-<div>
-  <div class="wrapper" *ngIf="!details.id">
-    <div class="quotes" *ngFor="let item of data">
-      <h1>Title : {{ item.title }}</h1>
-      <h2>Id : {{ item.id }}</h2>
-      <h2>Id : {{ item.body }}</h2>
-      <button (click)="getDetails(item.id)"> Edit </button>
-      <button> Delete </button>
-    </div>
-  </div>
-  <div *ngIf="details.id">
-    <h1>{{details.title}}</h1>
-    <h2>{{details.id}}</h2>
-    <h2>{{details.body}}</h2>
-    <button (click)="eraseDetails()">Back</button>
+<div class="wrapper">
+  <div class="quotes" *ngFor="let item of data">
+    <h1>Title : {{ item.title }}</h1>
+    <h2>Id : {{ item.id }}</h2>
+    <h2>Body : {{ item.body }}</h2>
+    <button [routerLink]="['/details', item.id]"> Details </button>
+    <button> Delete </button>
   </div>
   <div *ngIf="page !== 5">
     <button (click)="nextPage()">Next</button>

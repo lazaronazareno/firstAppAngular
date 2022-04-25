@@ -4,17 +4,27 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { QuotesListComponent } from './quotes-list/quotes-list.component';
+import { QuotesService } from './services/quotes.service';
+import { AppRoutingModule } from './app-routing.module';
+import { QDetailsComponent } from './q-details/q-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuotesListComponent
+    QuotesListComponent,
+    QDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [QuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
