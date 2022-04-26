@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { QDetailsComponent } from './q-details/q-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginformComponent } from './loginform/loginform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotesListComponent,
     QDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
