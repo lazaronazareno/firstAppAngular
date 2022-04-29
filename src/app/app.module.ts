@@ -10,6 +10,11 @@ import { QDetailsComponent } from './q-details/q-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginformComponent } from './loginform/loginform.component';
+import { TasklistComponent } from './tasklist/tasklist.component';
+import { TasklistButtonComponent } from './tasklist-button/tasklist-button.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskItemComponent } from './task-item/task-item.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { LoginformComponent } from './loginform/loginform.component';
     QuotesListComponent,
     QDetailsComponent,
     NotFoundComponent,
-    LoginformComponent
+    LoginformComponent,
+    TasklistComponent,
+    TasklistButtonComponent,
+    TasksComponent,
+    TaskItemComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
