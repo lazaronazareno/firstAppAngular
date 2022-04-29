@@ -11,6 +11,12 @@
       "text": "Nueva tarea",
       "day": "Agosto 5 a las 21:00",
       "reminder": false
+    },
+    {
+      "text": "Nueva tarea 23",
+      "day": "Mañana",
+      "reminder": true,
+      "id": 4
     }
   ]
 }
